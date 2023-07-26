@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/MainFragment">
+
+    <fragment
+        android:id="@+id/MainFragment"
+        android:name="wu.pei.cheng.taipeizoom.view.MainFragment"
+        android:label="台北市立動物園"
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/AreaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/AreaFragment"
+        android:name="wu.pei.cheng.taipeizoom.view.AreaFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_area">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/MainFragment" />
+
+        <action
+            android:id="@+id/action_AreaFragment_to_PlantFragment"
+            app:destination="@id/PlantFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/PlantFragment"
+        android:name="wu.pei.cheng.taipeizoom.view.PlantFragment"
+        android:label="@string/third_fragment_label"
+        tools:layout="@layout/fragment_plant">
+
+        <action
+            android:id="@+id/action_PlantFragment_to_AreaFragment"
+            app:destination="@id/AreaFragment" />
+    </fragment>
+</navigation>
